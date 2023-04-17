@@ -7,13 +7,14 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class TopInfoCell: UICollectionViewCell {
     static let identifier = "TopInfoCell"
     
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10.0
+        imageView.layer.cornerRadius = 20.0
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .secondarySystemBackground
         
@@ -113,6 +114,12 @@ final class TopInfoCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupCell(appInfo: AppInfoModel) {
+        iconImageView.kf.setImage(with: URL(string: appInfo.artworkUrl512)!)
+        titleLabel.text = appInfo.trackName
+        subTitleLabel.text = appInfo.artistName
     }
 }
 

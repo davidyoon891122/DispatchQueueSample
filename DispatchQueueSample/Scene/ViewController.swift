@@ -86,6 +86,8 @@ private extension ViewController {
             collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopInfoCell.identifier, for: indexPath) as? TopInfoCell else { return UICollectionViewCell() }
             
+            cell.setupCell(appInfo: item)
+            
             return cell
         })
         
