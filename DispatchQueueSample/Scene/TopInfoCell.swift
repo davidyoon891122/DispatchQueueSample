@@ -24,7 +24,7 @@ final class TopInfoCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "한국투자"
         label.textColor = .label
-        label.font = .systemFont(ofSize: 20.0, weight: .bold)
+        label.font = .systemFont(ofSize: 18.0, weight: .medium)
         
         return label
     }()
@@ -32,19 +32,19 @@ final class TopInfoCell: UICollectionViewCell {
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Korea Investment & Securities Co, Ltd."
-        label.font = .systemFont(ofSize: 14.0)
+        label.font = .systemFont(ofSize: 13.0)
         label.textColor = .gray
+        label.numberOfLines = 2
         
         return label
     }()
     
     private lazy var getButton: UIButton = {
-        var configure = UIButton.Configuration.plain()
-        configure.title = "Get"
-        configure.titlePadding = 8.0
-        configure.baseBackgroundColor = .systemBlue
-        
-        let button = UIButton(configuration: configure)
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Get", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 14.0
+        button.setTitleColor(.label, for: .normal)
         
         return button
     }()
@@ -60,7 +60,7 @@ final class TopInfoCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
         [
             iconImageView,
             titleLabel,
@@ -75,8 +75,9 @@ final class TopInfoCell: UICollectionViewCell {
         let offset: CGFloat = 16.0
         iconImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().offset(offset)
             $0.width.height.equalTo(100.0)
+            $0.bottom.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints {
@@ -86,15 +87,15 @@ final class TopInfoCell: UICollectionViewCell {
         }
         
         subTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(offset)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(offset / 4)
             $0.leading.equalTo(titleLabel)
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
         getButton.snp.makeConstraints {
-            $0.top.equalTo(subTitleLabel.snp.bottom).offset(offset)
             $0.leading.equalTo(iconImageView.snp.trailing).offset(offset)
-            $0.bottom.equalToSuperview().offset(-offset)
+            $0.width.equalTo(70.0)
+            $0.bottom.equalTo(iconImageView)
         }
         
         shareButton.snp.makeConstraints {
@@ -125,7 +126,10 @@ private extension TopInfoCell {
             }
         
         containerView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4978612D29EE0C12001053AF /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978612C29EE0C12001053AF /* SeparatorView.swift */; };
 		49EA41CB29ED04DA0009D511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41CA29ED04DA0009D511 /* AppDelegate.swift */; };
 		49EA41CD29ED04DA0009D511 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41CC29ED04DA0009D511 /* SceneDelegate.swift */; };
 		49EA41CF29ED04DA0009D511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41CE29ED04DA0009D511 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4978612C29EE0C12001053AF /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		49EA41C729ED04DA0009D511 /* DispatchQueueSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DispatchQueueSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EA41CA29ED04DA0009D511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EA41CC29ED04DA0009D511 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		49EA41E429ED0C470009D511 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4978612C29EE0C12001053AF /* SeparatorView.swift */,
 				49EA41CE29ED04DA0009D511 /* ViewController.swift */,
 				49EA41EA29ED14FE0009D511 /* TopInfoCell.swift */,
 			);
@@ -194,6 +197,7 @@
 				49EA41CF29ED04DA0009D511 /* ViewController.swift in Sources */,
 				49EA41EB29ED14FE0009D511 /* TopInfoCell.swift in Sources */,
 				49EA41CB29ED04DA0009D511 /* AppDelegate.swift in Sources */,
+				4978612D29EE0C12001053AF /* SeparatorView.swift in Sources */,
 				49EA41E829ED0C820009D511 /* AppInfoResponseModel.swift in Sources */,
 				49EA41CD29ED04DA0009D511 /* SceneDelegate.swift in Sources */,
 				49EA41E229ED06C50009D511 /* AppStoreService.swift in Sources */,
