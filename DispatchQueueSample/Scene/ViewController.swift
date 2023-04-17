@@ -6,12 +6,44 @@
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewLayout()
+        
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        configureNavigation()
+        setupViews()
+    }
+}
+
+private extension ViewController {
+    func configureNavigation() {
+        navigationItem.title = "AppInfo"
+    }
+    
+    func setupViews() {
+        view.backgroundColor = .systemBackground
+        [
+            collectionView
+        ]
+            .forEach {
+                view.addSubview($0)
+            }
+        
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
 

@@ -19,13 +19,14 @@ final class AppStoreService: service {
         let urlRequest = URLRequest(url: URL(string: "https://itunes.apple.com/lookup?bundleId=com.truefriend.neosmartirenewal")!)
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
-                print("error :\(error?.localizedDescription)")
+                print("error :\(String(describing: error?.localizedDescription))")
                 return
             }
             
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 do {
-                    
+                    let appVersionModel = try JSONDecoder().decode(AppInfoResponseModel.self, from: data)
+                    print(appVersionModel)
                 } catch(let error) {
                     print(error.localizedDescription)
                 }

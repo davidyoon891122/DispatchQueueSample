@@ -64,7 +64,7 @@
 				49EA41E429ED0C470009D511 /* Scene */,
 				49EA41E629ED0C530009D511 /* Resource */,
 				49EA41E529ED0C4C0009D511 /* Service */,
-				49EA41E729ED0C820009D511 /* AppInfoResponseModel.swift */,
+				49EA41E929ED0F140009D511 /* Model */,
 			);
 			path = DispatchQueueSample;
 			sourceTree = "<group>";
@@ -102,6 +102,14 @@
 				49EA41D829ED04DC0009D511 /* Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		49EA41E929ED0F140009D511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49EA41E729ED0C820009D511 /* AppInfoResponseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
