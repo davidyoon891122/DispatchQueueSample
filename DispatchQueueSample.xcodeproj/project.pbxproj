@@ -15,6 +15,7 @@
 		49EA41E029ED06AB0009D511 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49EA41DF29ED06AB0009D511 /* SnapKit */; };
 		49EA41E229ED06C50009D511 /* AppStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41E129ED06C50009D511 /* AppStoreService.swift */; };
 		49EA41E829ED0C820009D511 /* AppInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41E729ED0C820009D511 /* AppInfoResponseModel.swift */; };
+		49EA41EB29ED14FE0009D511 /* TopInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41EA29ED14FE0009D511 /* TopInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		49EA41D829ED04DC0009D511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49EA41E129ED06C50009D511 /* AppStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreService.swift; sourceTree = "<group>"; };
 		49EA41E729ED0C820009D511 /* AppInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoResponseModel.swift; sourceTree = "<group>"; };
+		49EA41EA29ED14FE0009D511 /* TopInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				49EA41CE29ED04DA0009D511 /* ViewController.swift */,
+				49EA41EA29ED14FE0009D511 /* TopInfoCell.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EA41CF29ED04DA0009D511 /* ViewController.swift in Sources */,
+				49EA41EB29ED14FE0009D511 /* TopInfoCell.swift in Sources */,
 				49EA41CB29ED04DA0009D511 /* AppDelegate.swift in Sources */,
 				49EA41E829ED0C820009D511 /* AppInfoResponseModel.swift in Sources */,
 				49EA41CD29ED04DA0009D511 /* SceneDelegate.swift in Sources */,

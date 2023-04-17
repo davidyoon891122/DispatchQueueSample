@@ -8,13 +8,13 @@
 import Foundation
 
 protocol service {
-    func requestService()
+    func requestService(completion: @escaping (([AppInfoModel])-> Void))
 }
 
 
 final class AppStoreService: service {
     
-    func requestService() {
+    func requestService(completion: @escaping (([AppInfoModel])-> Void)) {
         
         let urlRequest = URLRequest(url: URL(string: "https://itunes.apple.com/lookup?bundleId=com.truefriend.neosmartirenewal")!)
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -26,7 +26,7 @@ final class AppStoreService: service {
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 do {
                     let appVersionModel = try JSONDecoder().decode(AppInfoResponseModel.self, from: data)
-                    print(appVersionModel)
+                    completion(appVersionModel.results)
                 } catch(let error) {
                     print(error.localizedDescription)
                 }

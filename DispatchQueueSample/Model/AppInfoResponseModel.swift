@@ -12,7 +12,7 @@ struct AppInfoResponseModel: Decodable {
     let results: [AppInfoModel]
 }
 
-struct AppInfoModel: Decodable {
+struct AppInfoModel: Decodable, Hashable {
     let isGameCenterEnabled: Bool
     let supportedDevices: [String]
     let advisories: [String]
