@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct AppInfoResponseModel: Decodable {
+struct AppInfoResponseEntity: Decodable {
     let resultCount: Int
-    let results: [AppInfoModel]
+    let results: [AppInfoEntity]
 }
 
-struct AppInfoModel: Decodable, Hashable {
+struct AppInfoEntity: Decodable, Hashable {
     let isGameCenterEnabled: Bool
     let supportedDevices: [String]
     let advisories: [String]

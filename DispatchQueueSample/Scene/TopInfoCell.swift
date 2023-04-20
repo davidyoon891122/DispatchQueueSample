@@ -116,10 +116,10 @@ final class TopInfoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(appInfo: AppInfoModel) {
-        iconImageView.kf.setImage(with: URL(string: appInfo.artworkUrl512)!)
-        titleLabel.text = appInfo.trackName
-        subTitleLabel.text = appInfo.artistName
+    func setupCell(topInfoModel: TopInfoModel) {
+        iconImageView.kf.setImage(with: URL(string: topInfoModel.iconImageURL)!)
+        titleLabel.text = topInfoModel.title
+        subTitleLabel.text = topInfoModel.subTitle
     }
 }
 
