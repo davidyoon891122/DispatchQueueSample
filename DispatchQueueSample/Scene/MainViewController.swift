@@ -50,8 +50,6 @@ final class MainViewController: UIViewController {
     
     private var versionInfoModel: VersionInfoModel?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
@@ -153,8 +151,7 @@ private extension MainViewController {
         snapshot.appendSections([.top, .version])
         snapshot.appendItems([.top(topInfoModel)], toSection: .top)
         snapshot.appendItems([.version(versionInfoModel)], toSection: .version)
-        
-        datasource.apply(snapshot, animatingDifferences: true)
+        self.datasource.apply(snapshot, animatingDifferences: true)
     }
 }
 

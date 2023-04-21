@@ -26,7 +26,9 @@ final class AppStoreService: ServiceType {
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 do {
                     let appVersionModel = try JSONDecoder().decode(AppInfoResponseEntity.self, from: data)
-                    completion(appVersionModel.results)
+                    DispatchQueue.main.async {
+                        completion(appVersionModel.results)
+                    }
                 } catch(let error) {
                     print(error.localizedDescription)
                 }
