@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepositoryType {
-    
+    func requestService(completion: @escaping ((TopInfoModel, VersionInfoModel)) -> Void)
 }
 
 
@@ -21,8 +21,7 @@ final class AppVersionRepository: RepositoryType {
     }
     
     func requestService(completion: @escaping ((TopInfoModel, VersionInfoModel)) -> Void) {
-        service.requestService() { [weak self] result in
-            guard let self = self else { return }
+        service.requestService() { result in
             let topInfoModel = TopInfoModel(
                 iconImageURL: result[0].artworkUrl512,
                 title: result[0].trackName,

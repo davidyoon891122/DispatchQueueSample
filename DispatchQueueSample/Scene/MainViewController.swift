@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 enum SectionType: Hashable {
     case top
@@ -42,31 +43,34 @@ final class MainViewController: UIViewController {
     
     private var datasource: UICollectionViewDiffableDataSource<SectionType, ItemType>!
     
-    private let service = AppStoreService()
-    
-    private lazy var repository = AppVersionRepository(service: service)
-    
     private var topInfoModel: TopInfoModel?
     
     private var versionInfoModel: VersionInfoModel?
+    
+    private var viewModel: MainViewModelType
+    
+    private var disposeBag = DisposeBag()
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
         setupViews()
         configureDatasource()
+        bindViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        repository.requestService() { [weak self] (topInfoModel, versionInfoModel) in
-            guard let self = self else { return }
-            
-            self.topInfoModel = topInfoModel
-            self.versionInfoModel = versionInfoModel
-            self.applySnapshot()
-        }
+        viewModel.inputs.fetchAppInfo()
     }
 }
 
@@ -87,6 +91,17 @@ private extension MainViewController {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func bindViewModel() {
+        viewModel.outputs.appInfoPublishRelay
+            .subscribe(onNext: { [weak self] (topInfoModel, versionInfoModel) in
+                guard let self = self else { return }
+                self.topInfoModel = topInfoModel
+                self.versionInfoModel = versionInfoModel
+                self.applySnapshot()
+            })
+            .disposed(by: disposeBag)
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {

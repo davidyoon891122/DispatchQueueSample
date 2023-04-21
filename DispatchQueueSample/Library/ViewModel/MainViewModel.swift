@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol MainViewModelInput {
-    
+    func fetchAppInfo()
 }
 
 protocol MainViewModelOutput {
-    
+    var appInfoPublishRelay: PublishRelay<(TopInfoModel, VersionInfoModel)> { get }
 }
 
 protocol MainViewModelType {
@@ -25,6 +27,20 @@ final class MainViewModel: MainViewModelInput, MainViewModelOutput, MainViewMode
     var inputs: MainViewModelInput { self }
     var outputs: MainViewModelOutput { self }
     
+    var repository: RepositoryType
     
+    var appInfoPublishRelay: PublishRelay<(TopInfoModel, VersionInfoModel)> = .init()
+    
+    init(repository: RepositoryType) {
+        self.repository = repository
+    }
+    
+    
+    func fetchAppInfo() {
+        repository.requestService() { [weak self] topInfoModel, versionInfoModel in
+            guard let self = self else { return }
+            self.outputs.appInfoPublishRelay.accept((topInfoModel, versionInfoModel))
+        }
+    }
     
 }
