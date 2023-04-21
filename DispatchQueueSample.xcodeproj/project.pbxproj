@@ -57,6 +57,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492266BE29F20D4D005DA9F7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				492266BF29F20D54005DA9F7 /* ViewModel */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		492266BF29F20D54005DA9F7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				492266BC29F1FBB9005DA9F7 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		492266C029F2114E005DA9F7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4978612C29EE0C12001053AF /* SeparatorView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		4978613929EE2C9A001053AF /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +114,7 @@
 				49EA41E529ED0C4C0009D511 /* Service */,
 				49EA41E929ED0F140009D511 /* Model */,
 				4978613929EE2C9A001053AF /* Repository */,
-				492266BC29F1FBB9005DA9F7 /* MainViewModel.swift */,
+				492266BE29F20D4D005DA9F7 /* Library */,
 			);
 			path = DispatchQueueSample;
 			sourceTree = "<group>";
@@ -107,7 +131,7 @@
 		49EA41E429ED0C470009D511 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				4978612C29EE0C12001053AF /* SeparatorView.swift */,
+				492266C029F2114E005DA9F7 /* CustomView */,
 				49EA41CE29ED04DA0009D511 /* MainViewController.swift */,
 				49EA41EA29ED14FE0009D511 /* TopInfoCell.swift */,
 				4978613129EE1056001053AF /* VersionInfoCell.swift */,
