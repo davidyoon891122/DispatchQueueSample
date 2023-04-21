@@ -15,6 +15,8 @@ protocol MainViewModelInput {
 
 protocol MainViewModelOutput {
     var appInfoPublishRelay: PublishRelay<(TopInfoModel, VersionInfoModel)> { get }
+    var topInfoPublishRelay: PublishRelay<TopInfoModel> { get }
+    var versionInfoPublishRelay: PublishRelay<VersionInfoModel> { get }
 }
 
 protocol MainViewModelType {
@@ -30,6 +32,8 @@ final class MainViewModel: MainViewModelInput, MainViewModelOutput, MainViewMode
     var repository: RepositoryType
     
     var appInfoPublishRelay: PublishRelay<(TopInfoModel, VersionInfoModel)> = .init()
+    var topInfoPublishRelay: PublishRelay<TopInfoModel> = .init()
+    var versionInfoPublishRelay: PublishRelay<VersionInfoModel> = .init()
     
     init(repository: RepositoryType) {
         self.repository = repository
@@ -40,7 +44,8 @@ final class MainViewModel: MainViewModelInput, MainViewModelOutput, MainViewMode
         repository.requestService() { [weak self] topInfoModel, versionInfoModel in
             guard let self = self else { return }
             self.outputs.appInfoPublishRelay.accept((topInfoModel, versionInfoModel))
+            self.outputs.topInfoPublishRelay.accept(topInfoModel)
+            self.outputs.versionInfoPublishRelay.accept(versionInfoModel)
         }
     }
-    
 }
