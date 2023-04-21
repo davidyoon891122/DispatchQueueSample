@@ -15,6 +15,13 @@
 		492266EA29F23F63005DA9F7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 492266E929F23F63005DA9F7 /* RxCocoa */; };
 		492266EC29F23F63005DA9F7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 492266EB29F23F63005DA9F7 /* RxSwift */; };
 		492266EE29F23F63005DA9F7 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 492266ED29F23F63005DA9F7 /* RxTest */; };
+		492266F029F2702F005DA9F7 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492266EF29F2702F005DA9F7 /* MockService.swift */; };
+		492266F129F27082005DA9F7 /* AppInfoResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41E729ED0C820009D511 /* AppInfoResponseEntity.swift */; };
+		492266F229F27085005DA9F7 /* AppStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA41E129ED06C50009D511 /* AppStoreService.swift */; };
+		492266F329F27087005DA9F7 /* TopInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978613329EE2249001053AF /* TopInfoModel.swift */; };
+		492266F429F27089005DA9F7 /* VersionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978613529EE22C4001053AF /* VersionInfoModel.swift */; };
+		492266F529F270E1005DA9F7 /* AppVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978613729EE2B65001053AF /* AppVersionRepository.swift */; };
+		492266F629F27109005DA9F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492266BC29F1FBB9005DA9F7 /* MainViewModel.swift */; };
 		4978612D29EE0C12001053AF /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978612C29EE0C12001053AF /* SeparatorView.swift */; };
 		4978613029EE0ECF001053AF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4978612F29EE0ECF001053AF /* Kingfisher */; };
 		4978613229EE1056001053AF /* VersionInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978613129EE1056001053AF /* VersionInfoCell.swift */; };
@@ -46,6 +53,7 @@
 		492266BC29F1FBB9005DA9F7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		492266DD29F23D2F005DA9F7 /* DispatchQueueSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DispatchQueueSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		492266E629F23D3E005DA9F7 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		492266EF29F2702F005DA9F7 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		4978612C29EE0C12001053AF /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		4978613129EE1056001053AF /* VersionInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfoCell.swift; sourceTree = "<group>"; };
 		4978613329EE2249001053AF /* TopInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoModel.swift; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				492266E629F23D3E005DA9F7 /* MainViewModelTests.swift */,
+				492266EF29F2702F005DA9F7 /* MockService.swift */,
 			);
 			path = DispatchQueueSampleTests;
 			sourceTree = "<group>";
@@ -334,7 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492266F429F27089005DA9F7 /* VersionInfoModel.swift in Sources */,
 				492266E729F23D3E005DA9F7 /* MainViewModelTests.swift in Sources */,
+				492266F129F27082005DA9F7 /* AppInfoResponseEntity.swift in Sources */,
+				492266F029F2702F005DA9F7 /* MockService.swift in Sources */,
+				492266F329F27087005DA9F7 /* TopInfoModel.swift in Sources */,
+				492266F229F27085005DA9F7 /* AppStoreService.swift in Sources */,
+				492266F529F270E1005DA9F7 /* AppVersionRepository.swift in Sources */,
+				492266F629F27109005DA9F7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

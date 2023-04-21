@@ -76,10 +76,4 @@ final class MainViewModelTests: XCTestCase {
     }
 }
 
-final class MockService: ServiceType {
-    func requestService(completion: @escaping (([DispatchQueueSample.AppInfoEntity]) -> Void)) {
-        let appInfoEntity = AppInfoEntity.item
-        
-        completion([appInfoEntity])
-    }
-}
+
